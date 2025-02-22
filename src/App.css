@@ -1,0 +1,24 @@
+.box{
+  border: 1px solid darkblue;
+  padding: 8px;
+  background-color: #fff;
+  color: rgb(1, 1, 19);
+  border-radius: 8px;
+}
+
+.feature-list{
+  gap: 8px;
+}
+
+.feature-list_item{
+  font-size: 18px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.active,
+.feature-list_item:hover{
+  background-color: darkblue;
+  color: #ffffff;
+}
