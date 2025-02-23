@@ -1,23 +1,40 @@
-import { useState } from "react";
 
 import './App.css'
-import { FeatureListItem } from "./FeatureListItem"
-import { TabContent } from './TabContent'
-export default function  App(){
 
-  const [toggle, setToggle] = useState(1);
+import { FeatureListItem } from './FeatureListItem'
+
+export default function App() {
   return (
     <>
-    <div className="container">
-      <div className="box">
-        <ul className="flex feature-list">
-          <FeatureListItem  setToggle = {setToggle} toggle={ toggle} /> 
-        </ul>
-        <div>
-          <TabContent toggle = {toggle}/>
+      <div className="container">
+        <div className="app-wrapper">
+          <div className="app-row">
+            <div className="cal-2">
+              <div className="left-bar">
+                <div className="app-logo">
+                  <a href="#">APP LOGO</a>
+                </div>
+                <ul className='feature-list'>
+                  <FeatureListItem />
+                </ul>
+              </div>
+            </div>
+            <div className="cal-8">
+              <div className="right-bar">
+                <div className="content-wrapper">
+                  <div className="content-name">
+                    
+                  </div>
+                  <div className="content-box">
+                    content
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </>
   )
 }
