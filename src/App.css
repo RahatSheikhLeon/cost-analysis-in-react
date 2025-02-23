@@ -1,7 +1,7 @@
 .box{
   border: 1px solid darkblue;
   padding: 8px;
-  background-color: #fff;
+  background: linear-gradient(#ffffff, rgba(0, 0, 139, 0.644));
   color: rgb(1, 1, 19);
   border-radius: 8px;
 
@@ -30,4 +30,5 @@
   width: 100%;
   border: 1px solid darkblue;
   margin-bottom: 10px;
+  font-size: 17px;
 }

@@ -1,76 +1,54 @@
-import { useState } from "react";
+import { useState } from "react"
 
 export function AddPeople() {
-    const [memberInfo, setMemberInfo] = useState({
-        memberName: '',
-        memberPhone: '',
-        memberEmail: '',
-        memberNID: '',
-    });
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setMemberInfo((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleAdd = () => {
-        // Check if any field is empty
-        for (let index in memberInfo) {
-            if (!memberInfo[index]) {
-                alert(`Please enter ${key.replace("member", "")}`);
-                return;
+    // [memberInfoArr, setMemberInfoinArr]
+    const [memberInfoArr, setMemberInfoinArr] = useState(
+        [
+            {
+                memberName: '',
+                memberPhone: '',
+                memberEmail: '',
+                memberNID: ''
             }
-        }
+        ]
 
-        console.log("New Member Added:", memberInfo);
+    )
 
-        // Clear input fields
-        setMemberInfo({
-            memberName: '',
-            memberPhone: '',
-            memberEmail: '',
-            memberNID: '',
-        });
-    };
+    function test(){
+        console.log(memberInfoArr)
+    }
 
     return (
         <>
-            <h2>ADD People:</h2>
+            <h2>ADD Member : </h2>
             <form>
-                <input
-                    type="text"
-                    name="memberName"
-                    placeholder="Enter Member's Full Name"
+                <input type="text"
+                    placeholder="Enter The Member's Name"
                     className="form-control"
-                    value={memberInfo.memberName}
-                    onChange={handleChange}
+                    value={memberInfoArr.memberName}
+                    onChange={(e) => setMemberInfoinArr(e.target.value)}
                 />
-                <input
-                    type="number"
-                    name="memberPhone"
-                    placeholder="Enter Member's Phone Number"
+                <input type="number"
+                    placeholder="Enter The Member's Phone Number"
                     className="form-control"
-                    value={memberInfo.memberPhone}
-                    onChange={handleChange}
+                    value={memberInfoArr.memberPhone}
+                    onChange={(e) => setMemberInfoinArr(e.target.value)}
                 />
-                <input
-                    type="email"
-                    name="memberEmail"
-                    placeholder="Enter Member's Email"
+                <input type="email"
+                    placeholder="Enter The Member's Email"
                     className="form-control"
-                    value={memberInfo.memberEmail}
-                    onChange={handleChange}
+                    value={memberInfoArr.memberEmail}
+                    onChange={(e) => setMemberInfoinArr(e.target.value)}
                 />
-                <input
-                    type="number"
-                    name="memberNID"
-                    placeholder="Enter Member's NID"
+                <input type="number"
+                    placeholder="Enter The Member's NID"
                     className="form-control"
-                    value={memberInfo.memberNID}
-                    onChange={handleChange}
+                    value={memberInfoArr.memberNID}
+                    onChange={(e) => setMemberInfoinArr(e.target.value)}
                 />
-                <button type="button" onClick={handleAdd}>ADD</button>
+
+                <button type="button" onClick={test()}>Add Info</button>
             </form>
         </>
-    );
+    )
 }
