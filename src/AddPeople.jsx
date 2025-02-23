@@ -1,15 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export function AddPeople({ data, memberInfoArr }) {
+const data = {
+    1: [],
+    2: [],
+    3: []
+};
+
+// function abc(){
+//     let abc = '';
+
+//     function xyz() {
+//         abc;
+//         let x = 1230;
+//     }
+
+
+// }
+
+export function AddPeople({ home, setPeopleData }) {
     const [memberInfo, setMemberInfo] = useState(
-        memberInfoArr || {
+        {
             memberName: '',
             memberPhone: '',
             memberEmail: '',
             memberNID: ''
         }
     );
-   
+
+    useEffect(() => {
+        console.log('memberInfo Updated', memberInfo)
+        setPeopleData( memberInfo );
+    }, [memberInfo])
+
+
     function submit() {
         if (!memberInfo.memberName || !memberInfo.memberPhone || !memberInfo.memberEmail || !memberInfo.memberNID) {
             alert('Enter all data');
@@ -34,6 +57,7 @@ export function AddPeople({ data, memberInfoArr }) {
 
     return (
         <>
+            {home}
             <h2>ADD Member :</h2>
             <form>
                 <input type="text"
