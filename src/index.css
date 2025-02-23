@@ -7,6 +7,9 @@
   font-family: "IBM Plex Sans", serif;
 }
 
+h1, h2, h3, h4, h5, h6, p{
+  margin-bottom: 15px;
+}
 .container{
   max-width: 1200px;
   margin: 0 auto;
@@ -22,5 +25,19 @@
 }
 
 .show-content{
-  display: inline-block;
+  display:block;
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid darkblue;
+  border-radius: 4px;
+}
+
+button{
+  padding: 6px 20px;
+  font-size: 16px;
+  background-color: darkblue;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
 }

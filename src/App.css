@@ -4,6 +4,7 @@
   background-color: #fff;
   color: rgb(1, 1, 19);
   border-radius: 8px;
+
 }
 
 .feature-list{
@@ -21,4 +22,12 @@
 .feature-list_item:hover{
   background-color: darkblue;
   color: #ffffff;
+}
+
+.form-control{
+  padding: 8px ;
+  border-radius: 4px;
+  width: 100%;
+  border: 1px solid darkblue;
+  margin-bottom: 10px;
 }
