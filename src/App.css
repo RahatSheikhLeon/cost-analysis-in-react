@@ -2,6 +2,7 @@
   background-color: #ffffff;
   border-radius   : 8px;
   height: auto;
+  overflow: hidden;
 }
 
 .left-bar {
@@ -29,7 +30,7 @@
   padding: 12px 0 12px 12px;
 }
 
-.nev {
+.nav-list {
   font-size                : 18px;
   color                    : #ffffff;
   padding                  : 12px 0 12px 12px;
@@ -37,9 +38,11 @@
   border-top-left-radius   : 4px;
   border-bottom-left-radius: 4px;
   font-weight              : 500;
+  margin-bottom: 1px;
 }
 
-.nev:hover {
+.active,
+.nav-list:hover {
   background-color: aliceblue;
   color           : darkblue;
   border-right    : 1px solid red;
