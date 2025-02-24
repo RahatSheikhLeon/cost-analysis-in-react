@@ -1,12 +1,12 @@
 
-export function TableContent(){
+export function TableContent({memberInfo}){
     return(
         <div className="flex border-buttom table-content">
                     <div className="width-280 border-right">
                         <p>February</p>
                     </div>
                     <div className="width-280 border-right">
-                        <p>Rhat Sheikh</p>
+                        <p>{memberInfo.memberName}</p>
                     </div>
                     <div className="width-280 border-right">
                         <p>3</p>

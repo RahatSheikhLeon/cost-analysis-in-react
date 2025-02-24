@@ -1,4 +1,5 @@
 import { useState } from "react"
+
 import { Home } from "./Home"
 import { AddRecord } from "./AddRecord"
 import { AddMeal } from "./AddMeal"
@@ -14,12 +15,12 @@ export function TabContent({toggle}){
         }
     )
 
-console.log('member info test' , memberInfo)
-
     let content;
+
+
     switch (toggle){
         case 1:
-        content = <Home toggle ={toggle} />
+        content = <Home toggle ={toggle} memberInfo = {memberInfo} />
         break;
 
         case 2:

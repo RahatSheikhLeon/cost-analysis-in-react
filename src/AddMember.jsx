@@ -1,30 +1,21 @@
 
-export function AddMember({memberInfo, setMemberInfo }) {
-
+export function AddMember({ memberInfo, setMemberInfo }) {
     const dataHandeler = (e) => {
-        const {name, value} = e.target
-        setMemberInfo(prevState =>({
+        const { name, value } = e.target;
+        setMemberInfo(prevState => ({
             ...prevState,
             [name]: value
-        })   
+        })
         )
+
     }
-
-
-
-    // function submit(){
-    //     setMemberInfo = (
-    //         [{
-    //             memberName : 'Rahat',
-    //             memberNumber: '09302930293',
-    //             memberEmail : 'akfjklajfka',
-    //             memberNID  : '3232323',
-    //         }]
-    //     )
-           
-
-    //         console.log(setMemberInfo)
-    // }
+    const dataTest = memberInfo.memberName == '' || memberInfo.memberNumber == '' || memberInfo.memberEmail == '' || memberInfo.memberNID == '';
+    const submit = () => {
+        if (dataTest) {
+            alert('enter data')
+            return
+        }
+    }
 
 
     return (
@@ -33,9 +24,10 @@ export function AddMember({memberInfo, setMemberInfo }) {
                 type="text"
                 className="form-control"
                 placeholder="Enter Member Name"
-                value={setMemberInfo.memberName}
+                name="memberName"
+                value={memberInfo.memberName || ""}
                 onChange={dataHandeler}
-                // onChange={(e) => setMemberInfo({...memberInfo, memberName : e.target.value})} 
+            // onChange={(e) => setMemberInfo({...memberInfo, memberName : e.target.value})} 
 
             />
 
@@ -43,30 +35,33 @@ export function AddMember({memberInfo, setMemberInfo }) {
                 type="number"
                 className="form-control"
                 placeholder="Enter Member Phone Number"
-                value={setMemberInfo.memberNumber}
+                name="memberNumber"
+                value={memberInfo.memberNumber || ""}
                 onChange={dataHandeler}
-                // onChange={(e) => setMemberInfo({...memberInfo,  memberNumber: e.target.value})} 
+            // onChange={(e) => setMemberInfo({...memberInfo,  memberNumber: e.target.value})} 
             />
 
             <input
                 type="email"
                 className="form-control"
                 placeholder="Enter Member Email"
-                value={setMemberInfo.memberEmail}
+                name="memberEmail"
+                value={memberInfo.memberEmail || ""}
                 onChange={dataHandeler}
-                // onChange={(e) => setMemberInfo({...memberInfo, memberEmail: e.target.value})} 
+            // onChange={(e) => setMemberInfo({...memberInfo, memberEmail: e.target.value})} 
             />
 
             <input
                 type="number"
                 className="form-control"
                 placeholder="Enter Member NID"
-                value={setMemberInfo.memberNID}
+                name="memberNID"
+                value={memberInfo.memberNID || ""}
                 onChange={dataHandeler}
-                // onChange={(e) => setMemberInfo({...memberInfo, memberNID: e.target.value})} 
+            // onChange={(e) => setMemberInfo({...memberInfo, memberNID: e.target.value})} 
             />
 
-            <button type="button" className="add-btn" >Add Member</button>
+            <button type="button" className="add-btn" onClick={submit} >Add Member</button>
         </form>
     )
 }
