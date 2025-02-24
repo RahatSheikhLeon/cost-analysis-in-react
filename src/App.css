@@ -1,8 +1,15 @@
+.main-box{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
 .app-wrapper {
   background-color: #ffffff;
   border-radius   : 8px;
   height: auto;
   overflow: hidden;
+  box-shadow: 0 3px 8px 0px #2B2748;
 }
 
 .left-bar {

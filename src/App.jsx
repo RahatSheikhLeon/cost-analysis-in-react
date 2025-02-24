@@ -20,6 +20,7 @@ export default function App() {
 
   return (
     <>
+    <div className="main-box">
       <div className="container">
         <div className="app-wrapper">
           <div className="app-row">
@@ -50,6 +51,7 @@ export default function App() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   )
