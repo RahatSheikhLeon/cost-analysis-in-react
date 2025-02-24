@@ -12,8 +12,9 @@ export function TabContent({toggle}){
             memberEmail : '',
             memberNID  : '',
         }
-)
+    )
 
+console.log('member info test' , memberInfo)
 
     let content;
     switch (toggle){

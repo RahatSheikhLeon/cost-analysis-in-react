@@ -1,6 +1,5 @@
 
 .app-wrapper {
-  background-color: #ffffff;
   border-radius   : 8px;
   height: auto;
   overflow: hidden;
@@ -61,6 +60,24 @@
   background-color: #ffffff;
   padding         : 12px;
   margin-bottom   : 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.uiMood-change{
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 8px;
+ width: 40px;
+ height: 40px;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.uiMood-change:active svg{
+ width: 20px;
+ height: 20px;
 }
 
 .content-name {
