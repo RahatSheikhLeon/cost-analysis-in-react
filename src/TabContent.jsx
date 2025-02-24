@@ -1,9 +1,19 @@
-
+import { useState } from "react"
 import { Home } from "./Home"
 import { AddRecord } from "./AddRecord"
 import { AddMeal } from "./AddMeal"
 import { AddMember } from "./AddMember"
 export function TabContent({toggle}){
+
+    const [memberInfo, setMemberInfo] = useState(
+        {
+            memberName : '',
+            memberNumber: '',
+            memberEmail : '',
+            memberNID  : '',
+        }
+)
+
 
     let content;
     switch (toggle){
@@ -20,7 +30,7 @@ export function TabContent({toggle}){
         break;
 
         case 4:
-        content = <AddMember toggle = {toggle} />
+        content = <AddMember toggle = {toggle} memberInfo = {memberInfo} setMemberInfo = {setMemberInfo} />
         break;
 
     }
