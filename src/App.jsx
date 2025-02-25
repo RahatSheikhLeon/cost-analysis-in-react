@@ -3,6 +3,8 @@ import './App.css'
 import { FeatureListItem } from './FeatureListItem'
 import { TabContent } from './TabContent';
 import { UiMoodChange } from './UiMoodChange';
+
+
 export default function App() {
 
   const [toggle, setToggle] = useState(1)
@@ -30,7 +32,7 @@ export default function App() {
               <div className="cal-2">
                 <div className="left-bar">
                   <div className="app-logo">
-                    <a href="#" className='app-logo'>APP LOGO</a>
+                    <a href="#" className='app-logo'>mess management app</a>
                   </div>
                   <ul className='feature-list'>
                     <FeatureListItem

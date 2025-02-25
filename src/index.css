@@ -55,15 +55,27 @@
   color: #ffffff;
 }
 
+.dark-mood .form-control_50,
 .dark-mood .form-control {
   border: 2px solid #272626;
   background-color: #39383857;
   color: #ffffff;
 }
-.dark-mode .form-control::placeholder {
+.dark-mood .form-control_50::placeholder,
+.dark-mood .form-control::placeholder {
   color: #E0E0E0; 
   opacity: 0.7; 
 }
+
+.dark-mood  .nav-list:hover {
+  border-right    : 2px solid rgba(0, 0, 255, 0.411);
+}
+.dark-mood .active, .dark-mood  .active:hover{
+  border-right    : 2px solid rgba(255, 0, 0, 0.547);
+}
+
+
+
 
 .container {
   max-width: 1400px;
@@ -106,7 +118,7 @@
 .border-right {
   border-right: 2px solid whitesmoke;
 }
-
+.form-control_50,
 .form-control {
   width        : 100%;
   padding      : 8px 12px;
@@ -114,9 +126,13 @@
   border       : 2px solid whitesmoke;
   border-radius: 4px;
   margin-bottom: 10px;
-
 }
-
+.form-control_50{
+  width: 50%;
+  margin-bottom: 10px ;
+  display: block;
+}
+.form-control_50:focus,
 .form-control:focus {
   outline: 1px solid #2B2748;
 }
@@ -129,6 +145,7 @@
   border          : 1px solid whitesmoke;
   cursor          : pointer;
   box-shadow      : 0px 3px 8px 0px #2B2748;
+  display: block;
 }
 
 .add-btn:active {

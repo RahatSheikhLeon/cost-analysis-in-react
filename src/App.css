@@ -1,4 +1,6 @@
-
+.app-logo{
+ text-transform: uppercase;
+}
 .app-wrapper {
   border-radius   : 8px;
   height: auto;
@@ -46,7 +48,10 @@
 .nav-list:hover {
   background-color: aliceblue;
   color           : darkblue;
-  border-right    : 1px solid red;
+  border-right    : 2px solid blue;
+}
+.active, .active:hover{
+  border-right    : 2px solid red;
 }
 
 .content-wrapper {

@@ -6,17 +6,21 @@ import { AddMeal } from "./AddMeal"
 import { AddMember } from "./AddMember"
 export function TabContent({toggle}){
 
-    const [memberInfo, setMemberInfo] = useState(
-        {
-            memberName : '',
-            memberNumber: '',
-            memberEmail : '',
-            memberNID  : '',
-        }
-    )
+    const [memberInfo, setMemberInfo] = useState([]);
+    const [record, setRecord] = useState([]);
+    const [meal, setMeal] = useState([]);
+
+//     const newArr = [
+// {
+//     memberInfo,
+//     record,
+//     meal
+// }
+//     ]
+
+    // console.log(newArr)r
 
     let content;
-
 
     switch (toggle){
         case 1:
@@ -24,11 +28,11 @@ export function TabContent({toggle}){
         break;
 
         case 2:
-        content = <AddRecord toggle ={toggle} />
+        content = <AddRecord toggle ={toggle} record={record} setRecord={setRecord}/>
         break;
 
         case 3:
-        content = <AddMeal toggle = {toggle} />
+        content = <AddMeal toggle = {toggle}  meal={meal}  setMeal={setMeal} />
         break;
 
         case 4:

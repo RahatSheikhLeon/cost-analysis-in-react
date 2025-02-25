@@ -1,20 +1,40 @@
+import { useState } from "react";
+export function AddMember({ memberInfo, setMemberInfo, record }) {
 
-export function AddMember({ memberInfo, setMemberInfo }) {
-    const dataHandeler = (e) => {
+    const [localMemberInfo, setLocalMemberInfo] = useState(
+        {
+            memberName: '',
+            memberNumber: '',
+            memberEmail: '',
+            memberNID: '',
+        }
+    )
+
+    const localDataHandler = (e) => {
         const { name, value } = e.target;
-        setMemberInfo(prevState => ({
+        setLocalMemberInfo(prevState => ({
             ...prevState,
             [name]: value
-        })
-        )
-
+        }));
     }
-    const dataTest = memberInfo.memberName == '' || memberInfo.memberNumber == '' || memberInfo.memberEmail == '' || memberInfo.memberNID == '';
+
+    
+        
+
+
+    const dataTest = localMemberInfo.memberName == '' || localMemberInfo.memberNumber == '' || localMemberInfo.memberEmail == '' || localMemberInfo.memberNID == '';
     const submit = () => {
         if (dataTest) {
             alert('enter data')
             return
         }
+        setMemberInfo([...memberInfo, localMemberInfo])
+        setLocalMemberInfo ({
+            memberName: '',
+            memberNumber: '',
+            memberEmail: '',
+            memberNID: '',
+        })
     }
 
 
@@ -25,8 +45,8 @@ export function AddMember({ memberInfo, setMemberInfo }) {
                 className="form-control"
                 placeholder="Enter Member Name"
                 name="memberName"
-                value={memberInfo.memberName || ""}
-                onChange={dataHandeler}
+                value={localMemberInfo.memberName}
+                onChange={localDataHandler}
             // onChange={(e) => setMemberInfo({...memberInfo, memberName : e.target.value})} 
 
             />
@@ -36,8 +56,8 @@ export function AddMember({ memberInfo, setMemberInfo }) {
                 className="form-control"
                 placeholder="Enter Member Phone Number"
                 name="memberNumber"
-                value={memberInfo.memberNumber || ""}
-                onChange={dataHandeler}
+                value={localMemberInfo.memberNumber }
+                onChange={localDataHandler}
             // onChange={(e) => setMemberInfo({...memberInfo,  memberNumber: e.target.value})} 
             />
 
@@ -46,8 +66,8 @@ export function AddMember({ memberInfo, setMemberInfo }) {
                 className="form-control"
                 placeholder="Enter Member Email"
                 name="memberEmail"
-                value={memberInfo.memberEmail || ""}
-                onChange={dataHandeler}
+                value={localMemberInfo.memberEmail }
+                onChange={localDataHandler}
             // onChange={(e) => setMemberInfo({...memberInfo, memberEmail: e.target.value})} 
             />
 
@@ -56,8 +76,8 @@ export function AddMember({ memberInfo, setMemberInfo }) {
                 className="form-control"
                 placeholder="Enter Member NID"
                 name="memberNID"
-                value={memberInfo.memberNID || ""}
-                onChange={dataHandeler}
+                value={localMemberInfo.memberNID }
+                onChange={localDataHandler}
             // onChange={(e) => setMemberInfo({...memberInfo, memberNID: e.target.value})} 
             />
 

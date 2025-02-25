@@ -1,5 +1,6 @@
 
 export function TableContent({memberInfo}){
+
     return(
         <div className="flex border-buttom table-content">
                     <div className="width-280 border-right">
