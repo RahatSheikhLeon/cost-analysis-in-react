@@ -89,10 +89,30 @@
   border-top-right-radius: 4px;
 }
 
+
 .content-box {
   margin-bottom             : 0px;
   border-bottom-right-radius: 4px;
   background-color: #ffffff;
   height: 100%;
   padding         : 12px;
+}
+
+.a-member{
+  justify-content: space-between;
+}
+.info-box{
+  padding: 12px;
+  border: 2px solid whitesmoke;
+  border-radius: 4px;
+}
+
+.info-box h4{
+  margin-bottom: 10px;
+  font-weight: 400;
+
+
+}
+.info-box h4:last-child{
+  margin-bottom: 0px;
 }

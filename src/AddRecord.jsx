@@ -2,54 +2,65 @@
 import { useState } from "react"
 import { PersonSelector } from "./PersonSelector"
 
-export function AddRecord({record, setRecord}){
 
-const [localRecord, setLocalRecord] = useState(
-    {
-        date: '',
-        record: '',
+export function AddRecord({ record, setRecord, memberInfo }) {
+
+    const [localRecord, setLocalRecord] = useState(
+        {
+            date: '',
+            record: '',
+        }
+    );
+
+    const localDataHandler = (e) => {
+        const { name, value } = e.target;
+        setLocalRecord(records => ({
+            ...records,
+            [name]: value
+        }))
     }
-);
 
-const localDataHandler = (e) => {
-   const {name, value } = e.target;
-   setLocalRecord(records => ({
-    ...records,
-    [name] : value
-   }))
-}
+    function submit() {
+        if (localRecord.date === '' || localRecord.record === '') {
+            alert('Enter data')
+            return
+        }
+        setRecord([...record, localRecord])
+        setLocalRecord({
+            date: '',
+            record: '',
+        })
 
-function submit (){
-    setRecord([...record, localRecord])
-    setLocalRecord({
-        date: '',
-        record: '',
-    })
-}
+    }
 
-    return(
+    const [selectMember, setSelectValue] = useState('all');
+
+
+    return (
         <>
-        <PersonSelector />
-           <form>
-            <input 
-            type="number" 
-            className="form-control_50"
-            placeholder="Enter Member Reacord" 
-            name="record"
-            value={localRecord.record || ''}
-            onChange={localDataHandler}
-            />
 
-            <input 
-             className="form-control_50"
-            type="date" 
-            name="date"
-            value={localRecord.date || ''}
-            onChange={localDataHandler}
-            />
+            <PersonSelector memberInfo={memberInfo} selectMember={selectMember} setSelectValue={setSelectValue} />
 
-            <button type="button" className="add-btn " onClick={submit}> ADD Reacord</button>
-           </form>
+            <form>
+                <input
+                    type="number"
+                    className="form-control_50"
+                    placeholder="Enter Member Reacord"
+                    name="record"
+                    value={localRecord.record || ''}
+                    onChange={localDataHandler}
+                />
+
+                <input
+                    className="form-control_50"
+                    type="date"
+                    name="date"
+                    value={localRecord.date || ''}
+                    onChange={localDataHandler}
+                />
+
+                <button type="button" className="add-btn " onClick={submit}> ADD Reacord</button>
+            </form>
         </>
     )
 }

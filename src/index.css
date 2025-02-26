@@ -74,6 +74,14 @@
   border-right    : 2px solid rgba(255, 0, 0, 0.547);
 }
 
+.dark-mood .info-box{
+  border: 2px solid #272626;
+}
+
+.dark-mood .info-box h4{
+  color: #fff;
+
+}
 
 
 

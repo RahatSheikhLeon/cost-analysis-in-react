@@ -4,45 +4,50 @@ import { Home } from "./Home"
 import { AddRecord } from "./AddRecord"
 import { AddMeal } from "./AddMeal"
 import { AddMember } from "./AddMember"
-export function TabContent({toggle}){
+
+export function TabContent({ toggle }) {
 
     const [memberInfo, setMemberInfo] = useState([]);
     const [record, setRecord] = useState([]);
     const [meal, setMeal] = useState([]);
 
-//     const newArr = [
-// {
-//     memberInfo,
-//     record,
-//     meal
-// }
-//     ]
+    console.log(memberInfo[0]?.id)
+    //     const newArr = [
+    // {
+    //     memberInfo,
+    //     record,
+    //     meal
+    // }
+    //     ]
 
     // console.log(newArr)r
 
     let content;
 
-    switch (toggle){
+    switch (toggle) {
         case 1:
-        content = <Home toggle ={toggle} memberInfo = {memberInfo} />
-        break;
+        
+            content = <Home toggle={toggle} memberInfo={memberInfo} />
+            break;
 
         case 2:
-        content = <AddRecord toggle ={toggle} record={record} setRecord={setRecord}/>
-        break;
+            // setMemberInfo={setMemberInfo} 
+            content = <AddRecord toggle={toggle} memberInfo={memberInfo} record={record} setRecord={setRecord} />
+            break;
 
         case 3:
-        content = <AddMeal toggle = {toggle}  meal={meal}  setMeal={setMeal} />
-        break;
+            // setMemberInfo={setMemberInfo}
+            content = <AddMeal toggle={toggle} memberInfo={memberInfo} meal={meal} setMeal={setMeal} />
+            break;
 
         case 4:
-        content = <AddMember toggle = {toggle} memberInfo = {memberInfo} setMemberInfo = {setMemberInfo} />
-        break;
+            content = <AddMember toggle={toggle} memberInfo={memberInfo} setMemberInfo={setMemberInfo} />
+            break;
 
     }
-    return(
+    return (
         <>
-          {content}
+            {content}
         </>
     )
 }

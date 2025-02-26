@@ -1,12 +1,27 @@
 import { useState } from "react";
-export function AddMember({ memberInfo, setMemberInfo, record }) {
-
+export function AddMember({ memberInfo, setMemberInfo }) {
+let id = crypto.randomUUID()
     const [localMemberInfo, setLocalMemberInfo] = useState(
         {
             memberName: '',
             memberNumber: '',
             memberEmail: '',
             memberNID: '',
+            id: id,  
+            
+            records: [
+                {
+                    date: '',
+                    record: '',
+                }
+            ],
+            
+            meals: [
+                {
+                    date: '',
+                    meal: '',
+                }
+            ]
         }
     )
 
@@ -18,8 +33,8 @@ export function AddMember({ memberInfo, setMemberInfo, record }) {
         }));
     }
 
-    
-        
+
+
 
 
     const dataTest = localMemberInfo.memberName == '' || localMemberInfo.memberNumber == '' || localMemberInfo.memberEmail == '' || localMemberInfo.memberNID == '';
@@ -29,11 +44,25 @@ export function AddMember({ memberInfo, setMemberInfo, record }) {
             return
         }
         setMemberInfo([...memberInfo, localMemberInfo])
-        setLocalMemberInfo ({
+        setLocalMemberInfo({
             memberName: '',
             memberNumber: '',
             memberEmail: '',
             memberNID: '',
+            id: id, 
+            records: [
+                {
+                    date: '',
+                    record: '',
+                }
+            ],
+            
+            meals: [
+                {
+                    date: '',
+                    meal: '',
+                }
+            ] 
         })
     }
 
@@ -56,7 +85,7 @@ export function AddMember({ memberInfo, setMemberInfo, record }) {
                 className="form-control"
                 placeholder="Enter Member Phone Number"
                 name="memberNumber"
-                value={localMemberInfo.memberNumber }
+                value={localMemberInfo.memberNumber}
                 onChange={localDataHandler}
             // onChange={(e) => setMemberInfo({...memberInfo,  memberNumber: e.target.value})} 
             />
@@ -66,7 +95,7 @@ export function AddMember({ memberInfo, setMemberInfo, record }) {
                 className="form-control"
                 placeholder="Enter Member Email"
                 name="memberEmail"
-                value={localMemberInfo.memberEmail }
+                value={localMemberInfo.memberEmail}
                 onChange={localDataHandler}
             // onChange={(e) => setMemberInfo({...memberInfo, memberEmail: e.target.value})} 
             />
@@ -76,7 +105,7 @@ export function AddMember({ memberInfo, setMemberInfo, record }) {
                 className="form-control"
                 placeholder="Enter Member NID"
                 name="memberNID"
-                value={localMemberInfo.memberNID }
+                value={localMemberInfo.memberNID}
                 onChange={localDataHandler}
             // onChange={(e) => setMemberInfo({...memberInfo, memberNID: e.target.value})} 
             />

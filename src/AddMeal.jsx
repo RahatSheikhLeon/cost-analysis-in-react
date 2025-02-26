@@ -1,6 +1,7 @@
 import { useState } from "react";
-import {PersonSelector} from "./PersonSelector";
-export function AddMeal({meal, setMeal}) {
+import { PersonSelector } from "./PersonSelector"
+
+export function AddMeal({meal, setMeal, memberInfo}) {
 
     const [localMeal, setLocalMeal] = useState(
         {
@@ -18,16 +19,21 @@ export function AddMeal({meal, setMeal}) {
     }
 
     function submit() {
+        if (localMeal.date === '' || localMeal.meal === '') {
+            alert('Enter data')
+            return
+        }
         setMeal([...meal, localMeal])
         setLocalMeal({
             date: '',
             meal: '',
         })
     }
+    const [ selectMember, setSelectValue ] = useState('all');
 
     return (
         <>
-        <PersonSelector />
+            <PersonSelector memberInfo = {memberInfo} selectMember={selectMember} setSelectValue = {setSelectValue} />
             <form>
                 <input
                     type="number"
