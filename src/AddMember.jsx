@@ -1,28 +1,18 @@
 import { useState } from "react";
-export function AddMember({ memberInfo, setMemberInfo }) {
-let id = crypto.randomUUID()
+export function AddMember({ memberInfo, setMemberInfo}) {
+    let id = crypto.randomUUID()
+    let shortId = id.split('-')[0]
+
     const [localMemberInfo, setLocalMemberInfo] = useState(
         {
             memberName: '',
             memberNumber: '',
             memberEmail: '',
             memberNID: '',
-            id: id,  
-            
-            records: [
-                {
-                    date: '',
-                    record: '',
-                }
-            ],
-            
-            meals: [
-                {
-                    date: '',
-                    meal: '',
-                }
-            ]
-        }
+            id: shortId,
+            records: [],
+            meals: []
+           } 
     )
 
     const localDataHandler = (e) => {
@@ -33,39 +23,25 @@ let id = crypto.randomUUID()
         }));
     }
 
-
-
-
-
     const dataTest = localMemberInfo.memberName == '' || localMemberInfo.memberNumber == '' || localMemberInfo.memberEmail == '' || localMemberInfo.memberNID == '';
     const submit = () => {
         if (dataTest) {
-            alert('enter data')
-            return
+            return alert('enter data')
         }
+        console.log([...memberInfo, localMemberInfo])
         setMemberInfo([...memberInfo, localMemberInfo])
-        setLocalMemberInfo({
-            memberName: '',
-            memberNumber: '',
-            memberEmail: '',
-            memberNID: '',
-            id: id, 
-            records: [
-                {
-                    date: '',
-                    record: '',
-                }
-            ],
-            
-            meals: [
-                {
-                    date: '',
-                    meal: '',
-                }
-            ] 
-        })
+        setLocalMemberInfo(
+            {
+                memberName: '',
+                memberNumber: '',
+                memberEmail: '',
+                memberNID: '',
+                id: shortId,
+                records: [],
+                meals: []
+               } 
+        )
     }
-
 
     return (
         <form>

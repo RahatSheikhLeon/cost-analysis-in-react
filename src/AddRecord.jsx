@@ -1,45 +1,64 @@
 
 import { useState } from "react"
+
 import { PersonSelector } from "./PersonSelector"
 
 
-export function AddRecord({ record, setRecord, memberInfo }) {
+export function AddRecord({ memberInfo, setMemberInfo }) {
+
+    const [selectedMember, setSelectedMember] = useState('')
 
     const [localRecord, setLocalRecord] = useState(
         {
-            date: '',
             record: '',
+            date: '',
         }
-    );
+    )
 
     const localDataHandler = (e) => {
-        const { name, value } = e.target;
-        setLocalRecord(records => ({
-            ...records,
+        const { name, value } = e.target
+        setLocalRecord(prevState => ({
+            ...prevState,
             [name]: value
         }))
     }
 
-    function submit() {
-        if (localRecord.date === '' || localRecord.record === '') {
-            alert('Enter data')
-            return
+    const submit = () => {
+        if (localRecord.record === '' || localRecord.date === '') {
+            return alert('enter data')
         }
-        setRecord([...record, localRecord])
-        setLocalRecord({
-            date: '',
-            record: '',
-        })
+        if (selectedMember === 'all') {
+            setMemberInfo(memberInfo.map(info => ({
+                ...info,
+                record: [...[Array.isArray(info.record) ? info.record : []], localRecord]
+            })))
+        } else {
+            setMemberInfo(memberInfo.map(info => {
+                if (info.id === selectedMember) {
+                    return {
+                        ...info,
+                        record: [...[Array.isArray(info.record) ? info.record : []], localRecord]
+                    }
+                }
+                return info;
+            }))
+            
+       
+        }
 
+        setLocalRecord  (
+            {
+                record: '',
+                date: '',
+            }
+        )
+            
+        
     }
-
-    const [selectMember, setSelectValue] = useState('all');
-
-
     return (
         <>
 
-            <PersonSelector memberInfo={memberInfo} selectMember={selectMember} setSelectValue={setSelectValue} />
+            <PersonSelector setSelect={setSelectedMember} list={memberInfo} />
 
             <form>
                 <input

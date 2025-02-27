@@ -1,44 +1,40 @@
-import { useState } from "react";
+
 import { PersonSelector } from "./PersonSelector"
+import { useState } from "react"
+export function AddMeal({ memberInfo, setMemberInfo }) {
 
-export function AddMeal({meal, setMeal, memberInfo}) {
-
+    const [selectedMenber, setSelectedMenber] = useState('')
     const [localMeal, setLocalMeal] = useState(
         {
+            Meal: '',
             date: '',
-            record: '',
         }
-    );
+    )
 
     const localDataHandler = (e) => {
-        const { name, value } = e.target;
-        setLocalMeal(meal => ({
-            ...meal,
+        const { name, value } = e.target
+        setLocalMeal(test => ({
+            ...test,
             [name]: value
         }))
     }
 
-    function submit() {
-        if (localMeal.date === '' || localMeal.meal === '') {
-            alert('Enter data')
-            return
+    const submit = () => {
+        if (localMeal.Meal === '' || localMeal.date === '') {
+            return alert('enter data')
         }
-        setMeal([...meal, localMeal])
-        setLocalMeal({
-            date: '',
-            meal: '',
-        })
+
+        // if 
     }
-    const [ selectMember, setSelectValue ] = useState('all');
 
     return (
         <>
-            <PersonSelector memberInfo = {memberInfo} selectMember={selectMember} setSelectValue = {setSelectValue} />
+            <PersonSelector setSelectedMenber = {setSelectedMenber} list={memberInfo} />
             <form>
                 <input
                     type="number"
                     className="form-control_50"
-                    placeholder="Enter Member Reacord"
+                    placeholder="Enter Member Meal"
                     name="Meal"
                     value={localMeal.Meal || ''}
                     onChange={localDataHandler}

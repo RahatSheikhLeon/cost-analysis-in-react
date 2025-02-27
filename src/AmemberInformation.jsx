@@ -1,13 +1,17 @@
-export function AmemberInformation({memberInfo}) {
+export function AmemberInformation({memberInfo, selectMember}) {
+
+
+
+
     return (
         <>
             <div className="home-tabel_wrapper">
                 <div className="flex a-member">
-                    <h2>User Name : <span>{memberInfo[0]?.memberName}</span></h2>
+                    <h2>User Name : <span>name</span></h2>
                     <div className="width-280 info-box">
-                        <h4>Email : <span className="email">{memberInfo[0]?.memberEmail}</span> </h4>
-                        <h4>Phone : <span className="phone">{memberInfo[0]?.memberNumber}</span></h4>
-                        <h4>NID : <span className="nid">{memberInfo[0]?.memberNID}</span></h4>
+                        <h4>Email : <span className="email">leon@gmail.com</span> </h4>
+                        <h4>Phone : <span className="phone">0178</span></h4>
+                        <h4>NID : <span className="nid">98329390</span></h4>
                     </div>
                 </div>
                 <div className="flex border-buttom table-header">
