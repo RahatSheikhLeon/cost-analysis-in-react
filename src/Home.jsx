@@ -8,28 +8,30 @@ export function Home({ memberInfo }) {
         return <TableContent key={index} memberInfo={info} />
     })
 
-
-    const [selectMember, setSelectMember] = useState('')
-
-
+    const [selectMember, setSelectMember] = useState('all')
 
     return (
         <>
             <div className="home-tabel_wrapper">
                 <PersonSelector setSelect ={setSelectMember} list={memberInfo} />
 
-                {selectMember === 'all' ? <> <div className="flex border-buttom table-header">
+                {selectMember === 'all'?<> 
+
+                <div className="flex border-buttom table-header">
                     <div className="width-280"><h3>Month Name</h3></div>
                     <div className="width-280"><h3> User Name </h3></div>
                     <div className="width-280"><h3>Meal</h3></div>
                     <div className="width-280"><h3>Amount</h3></div>
                 </div>
-                {setMember}
-                 </> : <>
-                    <AmemberInformation selectMember = {selectMember} memberInfo = {memberInfo} />
-                </>}
-            </div>
 
+                {setMember}
+
+                 </> 
+                 :
+                  <>
+                    <AmemberInformation selectMember = {selectMember} memberInfo = {memberInfo} />
+                 </>}
+            </div>
         </>
     )
 }

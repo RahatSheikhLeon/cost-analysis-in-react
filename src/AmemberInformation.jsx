@@ -4,16 +4,16 @@ export function AmemberInformation({selectMember, memberInfo}) {
 console.log(selectMember)
 
 const selectedMember = memberInfo.find((info) => info.id === selectMember);
-console.log(selectedMember)
+console.log(selectedMember.memberName)
     return (
         <>
             <div className="home-tabel_wrapper">
                 <div className="flex a-member">
-                    <h2>User Name : <span>name</span></h2>
+                    <h2>User Name : <span>{selectedMember.memberName}</span></h2>
                     <div className="width-280 info-box">
-                        <h4>Email : <span className="email">leon@gmail.com</span> </h4>
-                        <h4>Phone : <span className="phone">0178</span></h4>
-                        <h4>NID : <span className="nid">98329390</span></h4>
+                        <h4>Email : <span className="email">{selectedMember.memberEmail}</span> </h4>
+                        <h4>Phone : <span className="phone">{selectedMember.memberNumber}</span></h4>
+                        <h4>NID : <span className="nid">{selectedMember.memberNID}</span></h4>
                     </div>
                 </div>
                 <div className="flex border-buttom table-header">

@@ -10,8 +10,8 @@ export function AddMember({ memberInfo, setMemberInfo}) {
             memberEmail: '',
             memberNID: '',
             id: shortId,
-            records: [],
-            meals: []
+            // records: [],
+            // meals: []
            } 
     )
 

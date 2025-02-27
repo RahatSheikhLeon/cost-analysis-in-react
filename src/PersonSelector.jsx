@@ -6,8 +6,8 @@ export const PersonSelector = ({ list, setSelect }) => {
 
     return (
         <select onChange={(e) => setSelect(e.target.value)} className="form-control_50">
-            {options.map((info, index) => (
-                <option key={index} value={info.value}>{info.label}</option>
+            {options?.map((info, index) => (
+                <option key={index} value={info?.value}>{info?.label}</option>
             ))}
         </select>
     );
