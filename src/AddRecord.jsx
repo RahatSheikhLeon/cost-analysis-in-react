@@ -27,13 +27,14 @@ export function AddRecord({ memberInfo, setMemberInfo }) {
         if (localRecord.record === '' || localRecord.date === '') {
             return alert('enter data')
         }
+        
         if (selectedMember === 'all') {
-            setMemberInfo(memberInfo.map(info => ({
+            setMemberInfo(memberInfo?.map(info => ({
                 ...info,
-                record: [...[Array.isArray(info.record) ? info.record : []], localRecord]
+                record: [...[Array.isArray(info?.record) ? info.record : []], localRecord]
             })))
         } else {
-            setMemberInfo(memberInfo.map(info => {
+            setMemberInfo(memberInfo?.map(info => {
                 if (info.id === selectedMember) {
                     return {
                         ...info,

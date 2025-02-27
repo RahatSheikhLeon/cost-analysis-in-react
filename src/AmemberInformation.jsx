@@ -1,8 +1,10 @@
-export function AmemberInformation({memberInfo, selectMember}) {
+export function AmemberInformation({selectMember, memberInfo}) {
 
 
+console.log(selectMember)
 
-
+const selectedMember = memberInfo.find((info) => info.id === selectMember);
+console.log(selectedMember)
     return (
         <>
             <div className="home-tabel_wrapper">

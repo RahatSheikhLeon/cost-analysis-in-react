@@ -1,6 +1,6 @@
 
 export const PersonSelector = ({ list, setSelect }) => {
-    const modifiedList = Array.isArray(list) ? list?.map(info => ({ label: info.memberName, value: info.id })) : [];
+    const modifiedList = Array.isArray(list) ? list?.map(info => ({ label: info?.memberName, value: info?.id })) : [];
 
     const options = [{ label: 'All', value: 'all' }, ...modifiedList];
 

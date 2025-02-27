@@ -13,8 +13,8 @@ export function AddMeal({ memberInfo, setMemberInfo }) {
 
     const localDataHandler = (e) => {
         const { name, value } = e.target
-        setLocalMeal(test => ({
-            ...test,
+        setLocalMeal(mealValue => ({
+            ...mealValue,
             [name]: value
         }))
     }
@@ -24,12 +24,32 @@ export function AddMeal({ memberInfo, setMemberInfo }) {
             return alert('enter data')
         }
 
-        // if 
+        if (selectedMenber === 'all'){
+            setMemberInfo(memberInfo.map(info => ({
+                ...info, 
+                Meal: [...[Array.isArray(info.Meal)? info.Meal :[]], localMeal]
+            })))
+        }else{
+            setMemberInfo(memberInfo.map(info => {
+                if (info.id === selectedMenber){
+                    return {
+                        ...info,
+                         Meal: [...[Array.isArray(info.Meal)? info.Meal :[]], localMeal]
+                    }
+                }
+            }))
+        }
+        setLocalMeal (
+            {
+                Meal: '',
+                date: '',
+            }
+        )
     }
 
     return (
         <>
-            <PersonSelector setSelectedMenber = {setSelectedMenber} list={memberInfo} />
+            <PersonSelector setSelect = {setSelectedMenber} list={memberInfo} />
             <form>
                 <input
                     type="number"
