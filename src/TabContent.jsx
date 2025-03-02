@@ -9,7 +9,8 @@ export function TabContent({ toggle }) {
 
     const [memberInfo, setMemberInfo] = useState([]);
 
-console.log(memberInfo)
+    console.log(memberInfo)
+
     let content;
     switch (toggle) {
         case 1:

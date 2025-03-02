@@ -116,3 +116,12 @@
 .info-box h4:last-child{
   margin-bottom: 0px;
 }
+.table-footer{
+  justify-content: space-between;
+
+}
+.align-item_center{
+  align-items: center;
+  gap: 10px;
+
+}

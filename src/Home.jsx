@@ -2,7 +2,10 @@ import { TableContent } from "./TableContent"
 import { PersonSelector } from "./PersonSelector"
 import { useState } from "react"
 import { AmemberInformation } from "./AmemberInformation"
+
+
 export function Home({ memberInfo }) {
+    console.log("member INfo in home", memberInfo)
 
     let setMember = memberInfo.map((info, index) => {
         return <TableContent key={index} memberInfo={info} />
@@ -13,7 +16,8 @@ export function Home({ memberInfo }) {
     return (
         <>
             <div className="home-tabel_wrapper">
-                <PersonSelector setSelect ={setSelectMember} list={memberInfo} />
+
+                <PersonSelector setSelect ={setSelectMember} memberInfoList={memberInfo} />
 
                 {selectMember === 'all'?<> 
 
@@ -25,6 +29,10 @@ export function Home({ memberInfo }) {
                 </div>
 
                 {setMember}
+                <div className="flex border-buttom table-footer">
+                    <div className="width-280"><h4 className="flex align-item_center">Total Meal : <span className="total-meal">39</span></h4></div>
+                    <div className="width-280"><h4 className="flex align-item_center">Total TK : <span className="total-tk">399999</span></h4></div>
+                </div>
 
                  </> 
                  :

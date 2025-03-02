@@ -55,6 +55,10 @@
   color: #ffffff;
 }
 
+.dark-mood .table-footer{
+  color: #ffffff;
+}
+
 .dark-mood .form-control_50,
 .dark-mood .form-control {
   border: 2px solid #272626;

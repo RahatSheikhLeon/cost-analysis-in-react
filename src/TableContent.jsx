@@ -18,7 +18,7 @@ export function TableContent({ memberInfo }) {
                 <p>{memberInfo.memberName}</p>
             </div>
             <div className="width-280 border-right">
-                <p>3</p>
+                <p></p>
             </div>
             <div className="width-280">
                 <p>500</p>

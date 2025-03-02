@@ -1,5 +1,6 @@
 import { useState } from "react";
 export function AddMember({ memberInfo, setMemberInfo}) {
+    
     let id = crypto.randomUUID()
     let shortId = id.split('-')[0]
 
@@ -37,8 +38,8 @@ export function AddMember({ memberInfo, setMemberInfo}) {
                 memberEmail: '',
                 memberNID: '',
                 id: shortId,
-                records: [],
-                meals: []
+                // records: [],
+                // meals: []
                } 
         )
     }
