@@ -6,23 +6,61 @@ import { AmemberInformation } from "./AmemberInformation"
 
 
 export function Home({ memberInfo }) {
-    console.log("member INfo in home", memberInfo)
-    const [allMealValue, setAllMealVaue]= useState('0')
-    const [allRecordValue, setAllRecordVaue]= useState('0')
-    console.log(
-        'test allMealValue', allMealValue
-    )
+    // console.log("member INfo in home", memberInfo)
+    // const [allMealValue, setAllMealVaue]= useState('0')
+    // const [allRecordValue, setAllRecordVaue]= useState('0')
+    // console.log(
+    //     'test allMealValue', allMealValue
+    // )
+
+    const [perPersoneTotalRecord, setPerPersoneTotalRecord] = useState()
+
+
     const setMember = memberInfo.map((info, index) => (
         <TableContent
           key={index}
           memberInfo={info}
-          setAllMealVaue={setAllMealVaue}
-          setAllRecordVaue={setAllRecordVaue}
+          setPerPersoneTotalRecord = {setPerPersoneTotalRecord}
         />
       ));
 
     const [selectMember, setSelectMember] = useState('all')
-  
+
+
+    console.log('memberinfo: ', memberInfo)
+    const calculateMeal = () => {
+        let total = 0
+        if (memberInfo.length > 0) {
+            memberInfo.forEach((item, index) => {
+                if (item.Meal && item.Meal.length > 0) {
+                    item.Meal.forEach((meal, mealIndex) => {
+                        if (meal.Meal) {
+                            total += parseInt(meal.Meal)
+                        }
+                    })
+                }
+            })
+        }
+        return total
+    }
+
+
+    const calculateAmount = () => {
+        let total = 0
+        if (memberInfo.length > 0) {
+            memberInfo.forEach((item, index) => {
+                if (item.Record && item.Record.length > 0) {
+                    item.Record.forEach((record, recordIndex) => {
+                        if (record.record) {
+                            total += parseInt(record.record)
+                        }
+                    })
+                }
+            })
+        }
+        return total
+    }
+
 
     return (
         <>
@@ -41,14 +79,14 @@ export function Home({ memberInfo }) {
 
                 {setMember}
                 <div className="flex border-buttom table-footer">
-                    <div className="width-280"><h4 className="flex align-item_center">Total Meal : <span className="total-meal">{allMealValue}</span></h4></div>
-                    <div className="width-280"><h4 className="flex align-item_center">Total TK : <span className="total-tk">{allRecordValue}</span></h4></div>
+                    <div className="width-280"><h4 className="flex align-item_center">Total Meal : <span className="total-meal">{calculateMeal()}</span></h4></div>
+                    <div className="width-280"><h4 className="flex align-item_center">Total TK : <span className="total-tk">{calculateAmount()}</span></h4></div>
                 </div>
 
                  </> 
                  :
                   <>
-                    <AmemberInformation selectMember = {selectMember} memberInfo = {memberInfo} />
+                    <AmemberInformation selectMember = {selectMember} memberInfo = {memberInfo} mealCount = {calculateMeal()} recordCount = {calculateAmount() } perPersoneTotalRecord = {perPersoneTotalRecord} />
                  </>}
             </div>
         </>

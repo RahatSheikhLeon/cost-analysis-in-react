@@ -1,11 +1,16 @@
 
 
-export function TableContent({ memberInfo, setAllMealVaue, setAllRecordVaue }) {
+export function TableContent({ memberInfo, setPerPersoneTotalRecord}) {
 
   const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
+  setPerPersoneTotalRecord(
+    memberInfo.Record && memberInfo.Record.length > 0
+    ? memberInfo.Record.reduce((sum, record) => sum + parseInt(record.record || 0), 0)
+    : '0'
+  )
 
   const newMonths = new Date().getMonth();
   const currentMonth = months[newMonths];
