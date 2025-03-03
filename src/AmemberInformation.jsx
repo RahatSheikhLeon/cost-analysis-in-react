@@ -1,6 +1,6 @@
 export function AmemberInformation({ selectMember, memberInfo }) {
 
-    // selectedMember থেকে Meal অ্যারে বের করো
+
     const selectedMember = memberInfo.find((info) => info.id === selectMember);
     const mealArray = selectedMember ? selectedMember.Meal : [];
 
@@ -22,20 +22,20 @@ export function AmemberInformation({ selectMember, memberInfo }) {
                     <div className="width-280"><h3>Daily Food Expenses</h3></div>
                 </div>
 
-                {/* mealArray যদি থাকে, তবে রেন্ডার করো */}
+
                 {mealArray?.map((meal, index) => (
-                    <div key={index} className="flex border-bottom table-content">
+                    <div key={index} className="flex border-buttom table-content">
                         <div className="width-280 border-right">
                             <p>{meal.date}</p>
                         </div>
                         <div className="width-280 border-right">
-                            <p>84</p> {/* Daily Meal Rate */}
+                            <p>84</p> 
                         </div>
                         <div className="width-280 border-right">
-                            <p>{meal.Meal}</p> {/* Meal Description */}
+                            <p>{meal.Meal}</p> 
                         </div>
                         <div className="width-280">
-                            <p>252</p> {/* Daily Food Expenses */}
+                            <p>252</p> 
                         </div>
                     </div>
                 ))}

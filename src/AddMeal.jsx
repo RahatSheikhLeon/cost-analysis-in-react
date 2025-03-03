@@ -2,7 +2,7 @@ import { PersonSelector } from "./PersonSelector";
 import { useState } from "react";
 
 export function AddMeal({ memberInfo, setMemberInfo }) {
-    const [selectedMenber, setSelectedMenber] = useState("");
+    const [selectedMenber, setSelectedMenber] = useState("all");
     const [localMeal, setLocalMeal] = useState({
         Meal: "",
         date: "",

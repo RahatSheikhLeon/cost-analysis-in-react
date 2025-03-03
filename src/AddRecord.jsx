@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PersonSelector } from "./PersonSelector";
 
 export function AddRecord({ memberInfo, setMemberInfo }) {
-    const [selectedMember, setSelectedMember] = useState("");
+    const [selectedMember, setSelectedMember] = useState("all");
 
     const [localRecord, setLocalRecord] = useState({
         record: "",
