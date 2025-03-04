@@ -25,7 +25,7 @@ export function AmemberInformation({ selectMember, memberInfo, mealCount, record
                 </div>
 
                 {/* Table Header */}
-                <div className="flex border-bottom table-header">
+                <div className="flex border-buttom table-header">
                     <div className="width-280"><h3>Date</h3></div>
                     <div className="width-280"><h3>Daily Meal Rate</h3></div>
                     <div className="width-280"><h3>Daily Meal</h3></div>

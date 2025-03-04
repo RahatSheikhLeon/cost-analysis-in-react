@@ -35,7 +35,7 @@ export default function App() {
               <div className="cal-2">
                 <div className="left-bar">
                   <div className="app-logo">
-                    <a href="#" className='app-logo'>mess management app</a>
+                    <a href="#" className='app-logo'>mes management app</a>
                   </div>
                   <ul className='feature-list'>
                     <FeatureListItem

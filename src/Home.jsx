@@ -79,8 +79,8 @@ export function Home({ memberInfo }) {
 
                 {setMember}
                 <div className="flex border-buttom table-footer">
-                    <div className="width-280"><h4 className="flex align-item_center">Total Meal : <span className="total-meal">{calculateMeal()}</span></h4></div>
-                    <div className="width-280"><h4 className="flex align-item_center">Total TK : <span className="total-tk">{calculateAmount()}</span></h4></div>
+                    <div className="width-50 border-right"><h4 className="flex align-item_center">Total Meal : <span className="total-meal">{calculateMeal()}</span></h4></div>
+                    <div className="width-50 "><h4 className="flex align-item_center">Total TK : <span className="total-tk">{calculateAmount()}</span></h4></div>
                 </div>
 
                  </> 
