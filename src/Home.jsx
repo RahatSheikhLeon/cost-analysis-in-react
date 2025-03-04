@@ -27,7 +27,7 @@ export function Home({ memberInfo }) {
     const [selectMember, setSelectMember] = useState('all')
 
 
-    console.log('memberinfo: ', memberInfo)
+    // console.log('memberinfo: ', memberInfo)
     const calculateMeal = () => {
         let total = 0
         if (memberInfo.length > 0) {

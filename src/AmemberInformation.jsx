@@ -9,7 +9,7 @@ export function AmemberInformation({ selectMember, memberInfo, mealCount, record
 
     // Calculate total expenses and balance
     const totalExpenses = perDayMealReatArray?.reduce((total, cost) => total + cost, 0);
-    console.log(perPersoneTotalRecord)
+    // console.log(perPersoneTotalRecord)
     const balance = perPersoneTotalRecord - totalExpenses;
 
     return (

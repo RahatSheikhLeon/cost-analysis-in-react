@@ -1,41 +1,43 @@
-import { useState } from "react"
+import { useState, useEffect } from "react";
 
-import { Home } from "./Home"
-import { AddRecord } from "./AddRecord"
-import { AddMeal } from "./AddMeal"
-import { AddMember } from "./AddMember"
+import { Home } from "./Home";
+import { AddRecord } from "./AddRecord";
+import { AddMeal } from "./AddMeal";
+import { AddMember } from "./AddMember";
 
 export function TabContent({ toggle }) {
-
     const [memberInfo, setMemberInfo] = useState([]);
 
-    // console.log(memberInfo)
+
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem("memberInfo")) || [];
+        setMemberInfo(data);
+    }, []);
+
+
+    useEffect(() => {
+        if (memberInfo.length > 0) {
+            localStorage.setItem("memberInfo", JSON.stringify(memberInfo));
+        }
+    }, [memberInfo]);
 
     let content;
     switch (toggle) {
         case 1:
-
-            content = <Home toggle={toggle} memberInfo={memberInfo} />
+            content = <Home toggle={toggle} memberInfo={memberInfo} />;
             break;
-
         case 2:
-            // setMemberInfo={setMemberInfo} 
-            content = <AddRecord toggle={toggle} memberInfo={memberInfo} setMemberInfo={setMemberInfo} />
+            content = <AddRecord toggle={toggle} memberInfo={memberInfo} setMemberInfo={setMemberInfo} />;
             break;
-
         case 3:
-            // setMemberInfo={setMemberInfo}
-            content = <AddMeal toggle={toggle} memberInfo={memberInfo} setMemberInfo={setMemberInfo} />
+            content = <AddMeal toggle={toggle} memberInfo={memberInfo} setMemberInfo={setMemberInfo} />;
             break;
-
         case 4:
-            content = <AddMember toggle={toggle} memberInfo={memberInfo} setMemberInfo={setMemberInfo} />
+            content = <AddMember toggle={toggle} memberInfo={memberInfo} setMemberInfo={setMemberInfo} />;
             break;
-
+        default:
+            content = <Home toggle={toggle} memberInfo={memberInfo} />;
     }
-    return (
-        <>
-            {content}
-        </>
-    )
+
+    return <>{content}</>;
 }
