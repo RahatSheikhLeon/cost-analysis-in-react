@@ -17,7 +17,7 @@ export function AmemberInformation({ selectMember, memberInfo, mealCount, record
             <div className="home-tabel_wrapper">
                 <div className="flex a-member">
                     <h2>User Name: <span>{selectedMember?.memberName}</span></h2>
-                    <div className="width-280 info-box">
+                    <div className="width-350 info-box">
                         <h4>Email: <span className="email">{selectedMember?.memberEmail}</span></h4>
                         <h4>Phone: <span className="phone">{selectedMember?.memberNumber}</span></h4>
                         <h4>NID: <span className="nid">{selectedMember?.memberNID}</span></h4>
@@ -63,10 +63,10 @@ export function AmemberInformation({ selectMember, memberInfo, mealCount, record
                     <div className="width-50">
                         <p>
                         <b>
-                            {selectedMember?.memberName} <span>will receive or give:</span> 
-                            <span style={{ color: balance < 0 ? 'red' : 'green' }}>
-                                {Math.abs(balance)} {balance < 0 ? "(Due Amount)" : "(Extra Paid)"}
-                            </span>
+                        {selectedMember?.memberName} <span>will receive or give:</span> 
+    <span style={{ color: balance < 0 ? 'red' : 'green' }}>
+        {Math.ceil(Math.abs(balance) * 100) / 100} {balance < 0 ? "(Due Amount)" : "(Extra Paid)"}
+    </span>
                         </b>
                         </p>
                        
