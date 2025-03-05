@@ -53,23 +53,23 @@ export function AmemberInformation({ selectMember, memberInfo, mealCount, record
                 {/* Total Cost Section */}
                 <div className="flex border-buttom">
                     <div className="width-50 border-right">
-                       <p>
-                       <b>
-                            <span>Total cost of </span> {selectedMember?.memberName} :
-                            <span> {totalExpenses}</span>
-                        </b>
-                        </p> 
+                        <p>
+                            <b>
+                                <span>Total cost of </span> {selectedMember?.memberName} :
+                                <span> {totalExpenses}</span>
+                            </b>
+                        </p>
                     </div>
                     <div className="width-50">
                         <p>
-                        <b>
-                        {selectedMember?.memberName} <span>will receive or give:</span> 
-    <span style={{ color: balance < 0 ? 'red' : 'green' }}>
-        {Math.ceil(Math.abs(balance) * 100) / 100} {balance < 0 ? "(Due Amount)" : "(Extra Paid)"}
-    </span>
-                        </b>
+                            <b>
+                                {selectedMember?.memberName} <span>will receive or give:</span>
+                                <span style={{ color: balance < 0 ? 'red' : 'green' }}>
+                                    {Math.ceil(Math.abs(balance) * 100) / 100} {balance < 0 ? "(Due Amount)" : "(Extra Paid)"}
+                                </span>
+                            </b>
                         </p>
-                       
+
                     </div>
                 </div>
             </div>

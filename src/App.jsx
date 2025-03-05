@@ -24,6 +24,8 @@ export default function App() {
     pageHeader = "Add Meal"
   } else if (toggle === 4) {
     pageHeader = "Add Member"
+  } else if (toggle === 5) {
+    pageHeader = "Setting"
   }
   // "main-app_wrapper dark-mood"
   return (

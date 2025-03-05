@@ -18,6 +18,9 @@ export function FeatureListItem({toggle, setToggle}){
          <li className={`nav-list ${toggle === 4 ? 'active' : ''}`}
              onClick={ () => setToggle (4)}
              >Add Member</li>
+              <li className={`nav-list ${toggle === 5 ? 'active' : ''}`}
+             onClick={ () => setToggle (5)}
+             >Setting</li>
         </>
     )
 }
