@@ -27,6 +27,9 @@ export default function App() {
   } else if (toggle === 5) {
     pageHeader = "Setting"
   }
+  else if (toggle === 6) {
+    pageHeader = "Setting"
+  }
   // "main-app_wrapper dark-mood"
   return (
     <>
@@ -55,7 +58,7 @@ export default function App() {
                       <UiMoodChange uiMood={uiMood} updateUiMood = {updateUiMood} />
                     </div>
                     <div className="content-box">
-                      <TabContent toggle={toggle} />
+                      <TabContent toggle={toggle} setToggle={setToggle}/>
                     </div>
                   </div>
                 </div>

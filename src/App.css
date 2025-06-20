@@ -128,7 +128,6 @@
 
 .width-350{
   width: 350px;
-    margin-top: -53px;
     margin-bottom: 50px;
 }
 
@@ -139,4 +138,24 @@
   .width-350{
     margin-top: 0px;
   }
+}
+.home-header{
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+.ex-btn-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.ex-btn-wrapper button{
+  padding: 8px 24px;
+}
+.border-buttom .table-content {
+  border-bottom: 2px solid whitesmoke !important;
+}
+.jXMJZY {
+  border-bottom: 2px solid whitesmoke !important;
 }

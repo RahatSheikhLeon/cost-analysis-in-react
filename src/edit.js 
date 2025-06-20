@@ -1,0 +1,11 @@
+const { useBlockProps } = wp.blockEditor;
+
+export default function Edit() {
+    const blockProps = useBlockProps();
+    return (
+        <div {...blockProps}>
+            <h3>Food Expense Tracker (Editor)</h3>
+            <div id="food-expense-tracker-editor"></div>
+        </div>
+    );
+}

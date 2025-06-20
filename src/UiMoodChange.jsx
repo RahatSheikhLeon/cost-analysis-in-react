@@ -1,8 +1,5 @@
 
 export function UiMoodChange({uiMood, updateUiMood}){
-    // function test () {
-    //    updateUiMood(prev => (prev === 1 ? 0 : 1))
-    // }
 
     return(
 

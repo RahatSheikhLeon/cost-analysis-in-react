@@ -29,7 +29,7 @@ export function AddMember({ memberInfo, setMemberInfo}) {
         if (dataTest) {
             return alert('enter data')
         }
-        // console.log([...memberInfo, localMemberInfo])
+
         setMemberInfo([...memberInfo, localMemberInfo])
         setLocalMemberInfo(
             {
