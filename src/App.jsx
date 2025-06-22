@@ -3,12 +3,9 @@ import './App.css'
 import { FeatureListItem } from './FeatureListItem'
 import { TabContent } from './TabContent';
 import { UiMoodChange } from './UiMoodChange';
-
+import applogo from '../public/logo2.svg';
 
 export default function App() {
-
-
-
 
   const [toggle, setToggle] = useState(1)
   let pageHeader = '';
@@ -39,8 +36,9 @@ export default function App() {
             <div className="app-row">
               <div className="cal-2">
                 <div className="left-bar">
-                  <div className="app-logo">
-                    <a href="#" className='app-logo'>mes management app</a>
+                  <div className="app-logo-wrapper">
+                     <img src={applogo} alt="App Logo" />
+                    <a href="#" className='app-logo'>mes manager</a>
                   </div>
                   <ul className='feature-list'>
                     <FeatureListItem

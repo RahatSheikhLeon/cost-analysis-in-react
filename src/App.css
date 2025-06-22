@@ -1,5 +1,6 @@
 .app-logo{
  text-transform: uppercase;
+ margin-left: 5px;
 }
 .app-wrapper {
   border-radius   : 8px;
@@ -22,7 +23,7 @@
 }
 
 
-.app-logo {
+.app-logo-wrapper {
   display        : flex;
   justify-content: center;
   align-items    : center;
