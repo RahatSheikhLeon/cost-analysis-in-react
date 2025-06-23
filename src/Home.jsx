@@ -8,6 +8,8 @@ import { use } from "react";
 
 export function Home({ memberInfo, setToggle }) {
 
+	{ console.log('home')}
+
     const lineCount = memberInfo.length
 
     const [allMember, setAllMember] = useState([]);

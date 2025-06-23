@@ -2,6 +2,7 @@ import { PersonSelector } from "./PersonSelector";
 import { useState } from "react";
 
 export function AddMeal({ memberInfo, setMemberInfo }) {
+	console.log('Add Meal');
     const [selectedMenber, setSelectedMenber] = useState("all");
     const [localMeal, setLocalMeal] = useState({
         Meal: "",

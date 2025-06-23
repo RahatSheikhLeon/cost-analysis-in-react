@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { PersonSelector } from "./PersonSelector";
+import { Outlet } from "react-router-dom";
 
 export function AddRecord({ memberInfo, setMemberInfo }) {
+	console.log('Add Record');
     const [selectedMember, setSelectedMember] = useState("all");
 
     const [localRecord, setLocalRecord] = useState({
