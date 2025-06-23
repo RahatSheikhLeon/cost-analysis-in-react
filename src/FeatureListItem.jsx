@@ -1,26 +1,26 @@
+import { Link } from "react-router-dom"
 
 export function FeatureListItem({ toggle, setToggle }) {
-
     return (
         <>
-            <li className={`nav-list ${toggle === 1 ? 'active' : ''}`}
+            <Link to="/">  <li className={`nav-list ${toggle === 1 ? 'active' : ''}`}
                 onClick={() => setToggle(1)}
-            >Home</li>
+            >Home</li></Link>
 
-            <li className={`nav-list ${toggle === 2 ? 'active' : ''}`}
+            <Link to="/Add Record">   <li className={`nav-list ${toggle === 2 ? 'active' : ''}`}
                 onClick={() => setToggle(2)}
-            >Add Record</li>
+            >Add Record</li></Link>
 
-            <li className={`nav-list ${toggle === 3 ? 'active' : ''}`}
+            <Link to="/Add Meal">  <li className={`nav-list ${toggle === 3 ? 'active' : ''}`}
                 onClick={() => setToggle(3)}
-            >Add Meal</li>
+            >Add Meal</li></Link>
 
-            <li className={`nav-list ${toggle === 4 ? 'active' : ''}`}
+            <Link href="/Add Member"><li className={`nav-list ${toggle === 4 ? 'active' : ''}`}
                 onClick={() => setToggle(4)}
-            >Add Member</li>
-            <li className={`nav-list ${toggle === 5 ? 'active' : ''}`}
+            >Add Member</li></Link>
+            <Link href="/Setting"><li className={`nav-list ${toggle === 5 ? 'active' : ''}`}
                 onClick={() => setToggle(5)}
-            >Setting</li>
+            >Setting</li></Link>
         </>
     )
 }
