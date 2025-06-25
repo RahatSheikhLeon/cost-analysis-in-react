@@ -8,10 +8,8 @@ import { UiMoodChange } from './UiMoodChange';
 
 
 export function Layout() {
-
     const [uiMood, updateUiMood] = useState(0)
 
-    
     return (
         <>
             <div className={`main-app_wrapper ${uiMood === 1 ? 'dark-mood' : ''}`}>
@@ -37,7 +35,7 @@ export function Layout() {
                                             <UiMoodChange uiMood={uiMood} updateUiMood={updateUiMood} />
                                         </div>
                                         <div className="content-box">
-                                            <Outlet />
+                                            <Outlet context={uiMood} />
                                         </div>
                                     </div>
                                 </div>
