@@ -4,8 +4,14 @@ import './App.css'
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import { UiMoodChange } from './UiMoodChange';
+
+
+
 export function Layout() {
+
     const [uiMood, updateUiMood] = useState(0)
+
+    
     return (
         <>
             <div className={`main-app_wrapper ${uiMood === 1 ? 'dark-mood' : ''}`}>
